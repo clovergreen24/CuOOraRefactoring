@@ -25,6 +25,12 @@ Publication >> description: anObject [
 	description := anObject
 ]
 
+{ #category : #initialize }
+Publication >> initialize [
+	votes := OrderedCollection new.
+	timestamp := DateAndTime now.
+]
+
 { #category : #'as yet unclassified' }
 Publication >> negativeVotes [
 	| r |

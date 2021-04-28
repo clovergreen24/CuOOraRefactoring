@@ -37,10 +37,9 @@ Question >> addTopic: aTopic [
 
 { #category : #'initalize-release' }
 Question >> initialize [
+	super initialize.
 	answers := OrderedCollection new.
 	topics := OrderedCollection new.
-	votes := OrderedCollection new.
-	timestamp := DateAndTime now.
 ]
 
 { #category : #accessing }
