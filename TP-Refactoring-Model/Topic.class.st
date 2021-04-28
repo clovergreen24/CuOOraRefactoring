@@ -18,8 +18,8 @@ Topic class >> name: aName description: aDescription [
 ]
 
 { #category : #accessing }
-Topic >> addQuestion: aQuetion [
-	questions add: aQuetion 
+Topic >> addQuestion: aQuestion [
+	questions add: aQuestion 
 ]
 
 { #category : #accessing }
@@ -28,8 +28,8 @@ Topic >> description [
 ]
 
 { #category : #accessing }
-Topic >> description: anObject [
-	description := anObject
+Topic >> description: aDescription [
+	description := aDescription 
 ]
 
 { #category : #initialize }
@@ -43,8 +43,8 @@ Topic >> name [
 ]
 
 { #category : #accessing }
-Topic >> name: anObject [
-	name := anObject
+Topic >> name: aName [
+	name := aName
 ]
 
 { #category : #accessing }
