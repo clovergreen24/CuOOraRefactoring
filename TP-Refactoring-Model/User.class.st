@@ -76,8 +76,8 @@ User >> password [
 ]
 
 { #category : #private }
-User >> password: anObject [
-	password := anObject
+User >> password: aPassword [
+	password := aPassword
 ]
 
 { #category : #accessing }
@@ -111,8 +111,8 @@ User >> username [
 ]
 
 { #category : #private }
-User >> username: anObject [
-	username := anObject
+User >> username: aUsername [
+	username := aUsername
 ]
 
 { #category : #accessing }
