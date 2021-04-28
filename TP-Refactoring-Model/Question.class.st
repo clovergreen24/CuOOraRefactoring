@@ -1,10 +1,14 @@
 Class {
 	#name : #Question,
-	#superclass : #Publication,
+	#superclass : #Object,
 	#instVars : [
 		'title',
 		'answers',
-		'topics'
+		'topics',
+		'timestamp',
+		'user',
+		'votes',
+		'description'
 	],
 	#category : #'TP-Refactoring-Model'
 }
