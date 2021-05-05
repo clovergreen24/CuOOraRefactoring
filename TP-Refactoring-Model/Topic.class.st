@@ -11,13 +11,11 @@ Class {
 
 { #category : #'intance creation' }
 Topic class >> name: aName description: aDescription [
-	^ self new
-		name: aName;
-		description: aDescription;
-		yourself
+	^ self new initializeWithName: aName withDescription: aDescription
+
 ]
 
-{ #category : #accessing }
+{ #category : #adding }
 Topic >> addQuestion: aQuestion [
 	questions add: aQuestion 
 ]
@@ -27,24 +25,20 @@ Topic >> description [
 	^ description
 ]
 
-{ #category : #accessing }
-Topic >> description: aDescription [
-	description := aDescription 
-]
-
 { #category : #initialize }
 Topic >> initialize [
 	questions := OrderedCollection new.
 ]
 
-{ #category : #accessing }
-Topic >> name [
-	^name
+{ #category : #initialization }
+Topic >> initializeWithName: aName withDescription: aDescription [
+	name := aName.
+	description := aDescription.
 ]
 
 { #category : #accessing }
-Topic >> name: aName [
-	name := aName
+Topic >> name [
+	^name
 ]
 
 { #category : #accessing }

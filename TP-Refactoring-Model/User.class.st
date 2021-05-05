@@ -16,31 +16,27 @@ Class {
 
 { #category : #'instance-creation' }
 User class >> username: aUsername password: aPassword questionRetriever: aQuestionRetriever [
-	^ self new
-		username: aUsername;
-		password: aPassword;
-		questionRetriever: aQuestionRetriever;
-		yourself
+	^ self new initializeWithUsername: aUsername withPassword: aPassword withQuestionRetriever: aQuestionRetriever 
 ]
 
-{ #category : #accessing }
+{ #category : #adding }
 User >> addAnswer: anAnswer [
 	answers add: anAnswer 
 
 ]
 
-{ #category : #accessing }
+{ #category : #adding }
 User >> addQuestion: aQuestion [
 	questions add: aQuestion
 ]
 
-{ #category : #accessing }
+{ #category : #adding }
 User >> addTopic: aTopic [
 	topics add: aTopic 
 
 ]
 
-{ #category : #accessing }
+{ #category : #adding }
 User >> addVote: aVote [
 	votes add: aVote
 ]
@@ -50,7 +46,7 @@ User >> answers [
 	^ answers
 ]
 
-{ #category : #accessing }
+{ #category : #adding }
 User >> follow: aUser [
 	following add: aUser 
 ]
@@ -70,14 +66,16 @@ User >> initialize [
 	votes := OrderedCollection new.
 ]
 
+{ #category : #initialization }
+User >> initializeWithUsername: aUsername withPassword: aPassword withQuestionRetriever: aQuestionRestriever [
+	username := aUsername .
+	password := aPassword .
+	questionRetriever := aQuestionRestriever 
+]
+
 { #category : #accessing }
 User >> password [
 	^ password
-]
-
-{ #category : #private }
-User >> password: aPassword [
-	password := aPassword
 ]
 
 { #category : #accessing }
@@ -85,17 +83,12 @@ User >> questionRetriever [
 	^ questionRetriever
 ]
 
-{ #category : #private }
-User >> questionRetriever: aQuestionRetriever [
-	questionRetriever := aQuestionRetriever.
-]
-
 { #category : #accessing }
 User >> questions [
 	^ questions
 ]
 
-{ #category : #accessing }
+{ #category : #queries }
 User >> questionsOfInterest [
 	^ questionRetriever retrieveQuestions: self.
 ]
@@ -108,11 +101,6 @@ User >> topics [
 { #category : #accessing }
 User >> username [
 	^ username
-]
-
-{ #category : #private }
-User >> username: aUsername [
-	username := aUsername
 ]
 
 { #category : #accessing }
