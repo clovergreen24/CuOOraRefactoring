@@ -4,11 +4,6 @@ Class {
 	#category : #'TP-Refactoring-Model'
 }
 
-{ #category : #'instance creation' }
-SocialQuestionRetriever class >> new: cuoora [
-	^ self new initializeWithCuoora: cuoora
-]
-
 { #category : #retrieving }
 SocialQuestionRetriever >> retrieveQuestions: aUser [
 	| followingCol temp qRet |

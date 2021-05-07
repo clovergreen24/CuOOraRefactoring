@@ -4,11 +4,6 @@ Class {
 	#category : #'TP-Refactoring-Model'
 }
 
-{ #category : #'instance creation' }
-TopicsQuestionRetriever class >> new: cuoora [
-	^ self new initializeWithCuoora: cuoora
-]
-
 { #category : #retrieving }
 TopicsQuestionRetriever >> retrieveQuestions: aUser [
 	| topicsCol temp qRet |
