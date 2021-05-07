@@ -40,6 +40,23 @@ Question >> initializeWithTitle: aTitle withDescription: aDescription withUser: 
 	user := aUser 
 ]
 
+{ #category : #testing }
+Question >> isFromToday [
+		^ (timestamp asDate = Date today)
+]
+
+{ #category : #queries }
+Question >> isFromUser: aUser [
+		^ user = aUser
+
+]
+
+{ #category : #queries }
+Question >> positiveVotesAmount [
+	^ self positiveVotes size
+
+]
+
 { #category : #accessing }
 Question >> title [
 	^title 

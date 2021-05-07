@@ -32,6 +32,12 @@ CuOOra >> addUser: aUser [
 
 ]
 
+{ #category : #queries }
+CuOOra >> averageVotes [
+	^self totalPositiveVotesAmount / self todayQuestions size.
+
+]
+
 { #category : #initialize }
 CuOOra >> initialize [
 	users := OrderedCollection new.
@@ -39,14 +45,32 @@ CuOOra >> initialize [
 	questions := OrderedCollection new
 ]
 
+{ #category : #queries }
+CuOOra >> popularQuestionsToday [
+	^self todayQuestions select:[:q | q positiveVotesAmount >= self averageVotes ]
+
+]
+
 { #category : #accessing }
 CuOOra >> questions [
 	^ questions
 ]
 
+{ #category : #queries }
+CuOOra >> todayQuestions [
+		^questions select:[:q | (q isFromToday)].
+
+]
+
 { #category : #accessing }
 CuOOra >> topics [
 	^ topics
+]
+
+{ #category : #queries }
+CuOOra >> totalPositiveVotesAmount [
+	^ questions sum: [:q | q positiveVotesAmount ]
+
 ]
 
 { #category : #accessing }

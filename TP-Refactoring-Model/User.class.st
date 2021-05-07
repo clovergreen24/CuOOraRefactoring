@@ -56,6 +56,12 @@ User >> following [
 	^ following
 ]
 
+{ #category : #queries }
+User >> followingQuestions [
+	^ following flatCollect:[ :follow | follow questions ].
+
+]
+
 { #category : #initialize }
 User >> initialize [
 
@@ -91,6 +97,12 @@ User >> questions [
 { #category : #queries }
 User >> questionsOfInterest [
 	^ questionRetriever retrieveQuestions: self.
+]
+
+{ #category : #queries }
+User >> topicQuestions [
+	^ topics flatCollect: [ :topic | topic questions ]
+
 ]
 
 { #category : #accessing }
